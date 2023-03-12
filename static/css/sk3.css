@@ -64,6 +64,10 @@ body {
 	max-width: var(--width-html);
 }
 
+header {
+	padding-bottom: 1rem;
+}
+
 #content,
 header,
 footer {
@@ -364,6 +368,10 @@ sk3-toc ul ul {
 
 .sk3-social-fab:hover {
 	opacity: 1;
+}
+
+.bg-light {
+	background-color: #dedede;
 }
 
 /* Font Awesome webfont */
