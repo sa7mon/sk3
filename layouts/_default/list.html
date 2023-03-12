@@ -3,8 +3,6 @@
 
 	<div></div>
 
-	<!--_index.md-->
-	{{if not .IsHome}}
 	{{with .Title}}
 	<h2>
 		<heading>{{.}}</heading>
@@ -15,13 +13,10 @@
 		<article>{{.}}</article>
 	</div>
 	{{end}}
-	{{end}}
 
 	<!--$paginator-->
 	{{$p := .Pages}}
-	{{if .IsHome}}
-	{{$p = where site.RegularPages "Type" "in" site.Params.mainSections}}
-	{{else if eq .Kind "taxonomy"}}
+	{{if eq .Kind "taxonomy"}}
 	{{$p = $p.ByTitle}}
 	{{end}}
 	{{$paginator := .Paginate $p}}
