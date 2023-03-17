@@ -11,4 +11,23 @@
 		{{with site.Params.subtitle}}<span class="sk3-sub-title">{{.}}</span>{{end}}
 	</div>
 
+	<!--Menu links-->
+	<div class="header-links">
+		{{if site.Menus}}
+		<ul class="">
+			{{$currentPage := .}}
+			{{range site.Menus.main}}
+			<li>
+				<a href="{{.URL}}">
+					{{.Pre}}
+					<span>{{.Name}}</span>
+				</a>
+			</li>
+			{{end}}
+		</ul>
+		{{end}}
+	</div>
+
+
+
 </header>

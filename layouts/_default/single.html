@@ -12,6 +12,15 @@
 
 	<div></div>
 
+	<!--Page Info-->
+	<section class="sk3-margin-v-full">
+		{{if site.Params.enableInfoBox}}
+		{{partial "pageinfo-box.html" .}}
+		{{else}}
+		{{partial "pageinfo.html" .}}
+		{{end}}
+	</section>
+
 	<!--TOC-->
 	{{if (default false .Params.toc)}}
 	{{if and (ge (len .TableOfContents) 100) (ne .Params.toc "false")}}
@@ -27,19 +36,8 @@
 
 	<div></div>
 
-	<!--Page Info-->
-	<section class="sk3-margin-v-full">
-		{{if site.Params.enableInfoBox}}
-		{{partial "pageinfo-box.html" .}}
-		{{else}}
-		{{partial "pageinfo.html" .}}
-		{{end}}
-	</section>
-
-	<div></div>
-
 	<!--Disqus-->
-	{{if and site.DisqusShortname (default true .Params.comment)}}
+	{{if and site.DisqusShortname (default false .Params.comment)}}
 	{{template "_internal/disqus.html" .}}
 	{{end}}
 

@@ -32,7 +32,7 @@
 {{end}}
 
 <!--related-->
-{{if (default true .Params.related)}}
+{{if (default false .Params.related)}}
 {{$related := site.RegularPages.Related . | first 5}}
 {{with $related}}
 <h3>See Also</h3>

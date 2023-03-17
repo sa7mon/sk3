@@ -21,6 +21,7 @@
 	--toc-pad: 1.4em;
 	--width-card: 32%;
 	--width-html: 1200px;
+	--code-padding: 8px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -66,6 +67,7 @@ body {
 
 header {
 	padding-bottom: 1rem;
+	justify-content: space-between;
 }
 
 #content,
@@ -374,6 +376,21 @@ sk3-toc ul ul {
 	background-color: #dedede;
 }
 
+header ul {
+	margin: 0;
+}
+
+header li {
+	display: inline;
+	padding-left: 1rem;
+}
+
+.header-links {
+	padding-top: 10px;
+	margin-right: 0.75rem;
+	font-weight: bold;
+}
+
 /* Font Awesome webfont */
 .fab {
 	font-size: var(--social-btn-size);
@@ -384,4 +401,13 @@ sk3-toc ul ul {
 
 .fab:hover {
 	opacity: 1;
+}
+
+/**
+* <pre> blocks - .highlight = language specified
+*/
+
+pre {
+	padding: var(--code-padding);
+	background-color: #272822;
 }

@@ -53,6 +53,7 @@
 	{{end}}
 
 	<!--card : related-->
+	{{if (default false .Params.related)}}
 	{{$related := site.RegularPages.Related . | first 5}}
 	{{with $related}}
 	<div class="sk3-card sk3-flex sk3-flex-center-h box">
@@ -63,6 +64,7 @@
 		</div>
 		{{end}}
 	</div>
+	{{end}}
 	{{end}}
 
 </section>

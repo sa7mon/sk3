@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html {{with .Language}}lang="{{.}}"{{end}}	>
+{{- partial "head.html" . -}}
+
+<body>
+	{{- partial "header.html" . -}}
+	<div id="content">
+        <div class="main">
+            <heading>
+                <h2>{{.Title}}</h2>
+            </heading>
+
+            <!--Content-->
+            <content class="sk3-margin-v-full">{{.Content}}</content>
+        </div>
+	</div>
+	{{- partial "footer.html" . -}}
+</body>
+
+</html>
