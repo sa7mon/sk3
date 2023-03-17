@@ -1,0 +1,16 @@
+<!--card-->
+<div id="sponsor">
+    <section class="sk3-flex sk3-flex-center-h sk3-margin-h-full sk3-margin-v-full">
+        <!--card : sponsor-->
+        <div class="sk3-flex sk3-flex-center-h sk3-flex-center-v box" style="width: 100%;">
+            <!-- <div class="sk3-flex sk3-flex-center-v sk3-flex-center-h"> -->
+                {{ $randomSponsor := shuffle .Site.Data.sponsors | first 1 }}
+                {{ range $randomSponsor }}
+                    <a href="{{ .url }}" target="_blank" rel="noopener">{{ .text }}</a>
+                {{ end }}
+                <br>
+                <span class="about"><a href="/sponsors">ℹ️ About these ads</a></span>
+            <!-- </div> -->
+        </div>
+    </section>
+</div>
