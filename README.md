@@ -163,7 +163,7 @@ youtubeuser|text|""
 **[Params.socialshare]** Control if share buttons appear at the bottom of page.
 
 Field|Type|Default Value
----|---|---|---
+---|---|---
 facebook|bool|false
 instagram|bool|false
 linkedin|bool|false
