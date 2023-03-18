@@ -40,8 +40,8 @@
 	<link rel="stylesheet" href="{{relLangURL ""}}css/sk3.css">
 	<!--css - site.Params-->
 	<style>
-		{{with site.Params.card.width}}
-		@media only screen and (min-width: 993px){:root{--width-card: {{.}};}}
+		{{with site.Params.card}}
+		@media only screen and (min-width: 993px){:root{--width-card: {{.width}};--width-info-card: {{.infowidth}};}}
 		{{end}}
 		{{with site.Params.pagewidth}}
 		@media only screen and (min-width: 993px){:root{--width-html: {{.}};}}

@@ -3,17 +3,17 @@
 
 	<!--card : author-->
 	{{if or .Lastmod .Params.author}}
-	<div class="sk3-card sk3-flex box">
+	<div class="sk3-card sk3-info-card sk3-flex box">
 		<div class="sk3-flex sk3-flex-center-v sk3-flex-center-h" style="display: inline-block;">
 			<!--author-->
 			{{with .Params.author}}<div class="sk3-margin-h"><h3>{{.}}</h3></div>{{end}}
 			<!--date-->
 			<div class="sk3-margin-h sk3-margin-down">
-				<em>{{dateFormat "Jan 02 2006" .PublishDate}}</em>
+				<em>{{dateFormat "January 02 2006" .PublishDate}}</em>
 			</div>
 			{{if ne .PublishDate .Lastmod}}
 			<div class="sk3-margin-h sk3-margin-down">
-				<em>Updated {{dateFormat "Jan 02 2006" .Lastmod}}</em>
+				<em>Updated {{dateFormat "January 02 2006" .Lastmod}}</em>
 			</div>
 			{{end}}
 		</div>
@@ -22,7 +22,7 @@
 
 	<!--card : tag-->
 	{{if (.GetTerms "tags")}}
-	<div class="sk3-card sk3-flex sk3-flex-center-h box">
+	<div class="sk3-card sk3-info-card sk3-flex sk3-flex-center-h box">
 		<div class="sk3-flex sk3-flex-center-v">
 			{{range sort (.GetTerms "tags") "LinkTitle"}}
 			<div class="sk3-margin-h txt-center-h">
@@ -35,7 +35,7 @@
 
 	<!--card : share-->
 	{{if site.Params.socialshare}}
-	<div class="sk3-card sk3-flex sk3-flex-center-h box">
+	<div class="sk3-card sk3-info-card sk3-flex sk3-flex-center-h box">
 		<div class="sk3-flex sk3-flex-center-v sk3-flex-center-h">
 			{{partial "social-share.html" .}}
 		</div>
@@ -45,7 +45,7 @@
 	<!--card : nav-->
 	{{if (default false .Params.prevnext)}}
 	{{if or .PrevInSection .NextInSection}}
-	<div class="sk3-card sk3-flex sk3-flex-center-h box">
+	<div class="sk3-card sk3-info-card sk3-flex sk3-flex-center-h box">
 		<div class="sk3-flex sk3-flex-center-v sk3-flex-center-h">
 			<!--prev-->
 			{{with .PrevInSection}}
@@ -64,7 +64,7 @@
 	{{if (default false .Params.related)}}
 	{{$related := site.RegularPages.Related . | first 5}}
 	{{with $related}}
-	<div class="sk3-card sk3-flex sk3-flex-center-h box">
+	<div class="sk3-card sk3-info-card sk3-flex sk3-flex-center-h box">
 		See Also
 		{{range .}}
 		<div class="sk3-margin-h txt-center-h">

@@ -34,6 +34,9 @@
 	.sk3-card {
 		width: var(--width-card);
 	}
+	.sk3-info-card {
+		width: var(--width-info-card) !important;
+	}
 }
 
 h1 {
