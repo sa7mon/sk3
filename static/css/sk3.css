@@ -1,6 +1,6 @@
 :root {
 	--color-bg: #181a1b;
-	--color-border: white;
+	--color-border: #878787;
 	--color-link: #3d84ff;
 	--color-txt: white;
 	--font-size: 1em;
@@ -310,6 +310,10 @@ td {
 	padding-left: var(--h1-size-using);
 }
 
+.sk3-title {
+	color: #fff;
+}
+
 sk3-pager {
 	font-size: var(--h3-size);
 	font-weight: bold;
@@ -421,6 +425,7 @@ pre {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	font-weight: bold;
+	border-style: dashed;
 }
 
 #sponsor .about {

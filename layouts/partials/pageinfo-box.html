@@ -1,6 +1,38 @@
 <!--card-->
 <section class="sk3-flex sk3-flex-center-h">
 
+	<!--card : author-->
+	{{if or .Lastmod .Params.author}}
+	<div class="sk3-card sk3-flex box">
+		<div class="sk3-flex sk3-flex-center-v sk3-flex-center-h" style="display: inline-block;">
+			<!--author-->
+			{{with .Params.author}}<div class="sk3-margin-h"><h3>{{.}}</h3></div>{{end}}
+			<!--date-->
+			<div class="sk3-margin-h sk3-margin-down">
+				<em>{{dateFormat "Jan 02 2006" .PublishDate}}</em>
+			</div>
+			{{if ne .PublishDate .Lastmod}}
+			<div class="sk3-margin-h sk3-margin-down">
+				<em>Updated {{dateFormat "Jan 02 2006" .Lastmod}}</em>
+			</div>
+			{{end}}
+		</div>
+	</div>
+	{{end}}
+
+	<!--card : tag-->
+	{{if (.GetTerms "tags")}}
+	<div class="sk3-card sk3-flex sk3-flex-center-h box">
+		<div class="sk3-flex sk3-flex-center-v">
+			{{range sort (.GetTerms "tags") "LinkTitle"}}
+			<div class="sk3-margin-h txt-center-h">
+				[<a class="sk3-margin-h" href="{{.RelPermalink}}">{{.LinkTitle}}</a>]
+			</div>
+			{{end}}
+		</div>
+	</div>
+	{{end}}
+
 	<!--card : share-->
 	{{if site.Params.socialshare}}
 	<div class="sk3-card sk3-flex sk3-flex-center-h box">
@@ -10,32 +42,8 @@
 	</div>
 	{{end}}
 
-	<!--card : author-->
-	{{if or .Lastmod .Params.author}}
-	<div class="sk3-card sk3-flex sk3-flex-center-h box">
-		<div class="sk3-flex sk3-flex-center-v sk3-flex-center-h">
-			<!--author-->
-			{{with .Params.author}}<div class="sk3-margin-h"><h3>{{.}}</h3></div>{{end}}
-			<!--date-->
-			{{with .Lastmod}}<div class="sk3-margin-h sk3-margin-down">Update: {{dateFormat "2006-01-02" .}}</div>{{end}}
-		</div>
-	</div>
-	{{end}}
-
-	<!--card : tag-->
-	{{if (.GetTerms "tags")}}
-	<div class="sk3-card sk3-flex sk3-flex-center-h box">
-		Tag
-		{{range sort (.GetTerms "tags") "LinkTitle"}}
-		<div class="sk3-margin-h txt-center-h">
-			[<a class="sk3-margin-h" href="{{.RelPermalink}}">{{.LinkTitle}}</a>]
-		</div>
-		{{end}}
-	</div>
-	{{end}}
-
 	<!--card : nav-->
-	{{if (default true .Params.prevnext)}}
+	{{if (default false .Params.prevnext)}}
 	{{if or .PrevInSection .NextInSection}}
 	<div class="sk3-card sk3-flex sk3-flex-center-h box">
 		<div class="sk3-flex sk3-flex-center-v sk3-flex-center-h">
