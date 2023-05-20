@@ -441,3 +441,7 @@ figcaption {
     text-align: center;
     font-style: italic;
 }
+
+.padding-bottom-2 {
+	padding-bottom: 2rem;
+}
