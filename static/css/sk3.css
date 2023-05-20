@@ -417,6 +417,7 @@ header li {
 pre {
 	padding: var(--code-padding);
 	background-color: #272822;
+	white-space: pre-wrap;
 }
 
 /**
@@ -425,8 +426,6 @@ pre {
 
 #sponsor section div {
 	width: 100%;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
 	font-weight: bold;
 	border-style: dashed;
 }
@@ -436,4 +435,9 @@ pre {
 	width: 100%;
 	font-weight: normal;
 	font-size: 0.85rem;
+}
+
+figcaption {
+    text-align: center;
+    font-style: italic;
 }
