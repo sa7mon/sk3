@@ -7,7 +7,7 @@
     <em>{{ $url.Hostname}}</em>
     
     <span> 
-        {{ if .Get "type" }}[{{ .Get "type" }}]{{ else }}<span class="type">article</span>{{ end }}
+        <span class="type">{{ if .Get "type" }}{{ .Get "type" }}{{ else }}article{{ end }}</span>
         {{ range $index, $element := $tags}}
         {{- if ne $index 0 -}}{{end}}<span class="tag">{{- $element -}}</span>
         {{end}}
