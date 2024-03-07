@@ -10,13 +10,10 @@
 	</heading>
 	{{end}}
 
-	<div></div>
-
 	<!--Page Info-->
-	<section class="sk3-margin-v-full padding-bottom-2">
+	<section class="sk3-margin-v-full">
 		{{if site.Params.enableInfoBox}}
 		{{partial "pageinfo-box.html" .}}
-		{{partial "sponsor.html" .}}
 		{{else}}
 		{{partial "pageinfo.html" .}}
 		{{end}}
@@ -35,7 +32,7 @@
 	<!--Content-->
 	{{with .Content}}<content class="sk3-margin-v-full">{{.}}</content>{{end}}
 
-	<div></div>
+	{{partial "sponsor.html" .}}
 
 	<!--Disqus-->
 	{{if and site.DisqusShortname (default false .Params.comment)}}
