@@ -28,6 +28,11 @@
 	<!--canonical url-->
 	{{if site.Params.enableUserCanonical}}<link rel="canonical" href="{{absURL .Permalink}}"/>{{end}}
 
+	<!-- https://indieweb.org/rel-me -->
+	{{range site.Params.identities}}
+		{{printf `<link rel="me" href="%s" name="%s">` .url .name | safeHTML}}
+	{{end}}
+
 	<!--rss, etc.-->
 	{{range .AlternativeOutputFormats}}
 		{{printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML}}
