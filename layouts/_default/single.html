@@ -32,8 +32,6 @@
 	<!--Content-->
 	{{with .Content}}<content class="sk3-margin-v-full">{{.}}</content>{{end}}
 
-	{{partial "sponsor.html" .}}
-
 	<!--Disqus-->
 	{{if and site.DisqusShortname (default false .Params.comment)}}
 	{{template "_internal/disqus.html" .}}
